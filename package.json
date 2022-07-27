@@ -1,0 +1,12 @@
+{
+  "name": "adminTest",
+  "version": "1.0.0",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "qs": "^6.11.0",
+    "react-dev-utils": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
