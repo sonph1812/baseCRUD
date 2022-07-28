@@ -1,6 +1,7 @@
 const http = require('http');
 const url = require('url');
 const fs = require('fs');
+const qs = require('qs');
 const HomeController = require("./controller/home-controller");
 const ErrorController = require("./controller/error-controller");
 const bookController = require("./controller/bookcontroller");
@@ -37,32 +38,38 @@ let server = http.createServer((req, res) => {
             homecontroll.showhomepage(req, res);
             break;
         }
-        case '/admin/bookmanagement/add': {
-            if (method === 'GET') {
-                bookcontroll.showBookList(req, res);
+        case "/admin/bookmanagement": {
+            bookcontroll.showBookList(req, res);
+            break;
+        }
+
+        case "/admin/bookmanagement/create": {
+            if (method === "GET") {
+                bookcontroll.showBookFormCreate(req, res);
             } else {
                 bookcontroll.addBook(req, res);
             }
             break;
         }
-        case '/views/admin/bookmanagement/list': {
-            fs.readFile('views/bookmanagement/list.html', 'utf-8', (err, data) => {
-                if (err) {
-                    throw new Error(err.message)
-                } else {
-                    res.writeHead(200, {'Content-Type': 'text/html'});
-                    res.write(data);
-                    return res.end();
-                }
-            });
 
+        case "/admin/bookmanagement/edit": {
+            let query = qs.parse(path.query);
+            let idUpdate = query.id;
+            if (method === "GET") {
+                bookcontroll.showBookList(req, res, idUpdate);
+            } else {
+                bookcontroll.editBook(req, res, idUpdate);
+            }
             break;
         }
-        case '/views/admin/bookmanagement/update/': {
-            if (method == 'GET') {
-                bookcontroll.showEditForm(req,res)
+
+        case "/admin/bookmanagement/delete": {
+            let query = qs.parse(path.query);
+            let idUpdate = query.id;
+            if (method === "GET") {
+                bookcontroll.deleteBook(req, res, idUpdate);
             } else {
-                bookcontroll.editBook(req,res)
+                bookcontroll.showEditForm(req, res);
             }
             break;
         }

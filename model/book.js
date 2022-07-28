@@ -67,99 +67,21 @@ class Book {
     }
 
     deleteBook(id) {
-        let query = `delete
-                     from Sach
-                     where id = ${id}`;
-        this.connection.query(query, (err, data) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Delete Done')
-            }
+        return new Promise((resolve, reject) => {
+            let query = `delete
+                         from Sach
+                         where id = ${id}`;
+            this.connection.query(query, (err, data) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data)
+                    console.log("DeleteDone")
+                }
+            })
         })
     }
 }
 
 module.exports = Book;
 
-// //đậpnpm i react-dev-utils@10.0.0
-// const connectionMysql = require('./connection').createConnection()
-// module.exports = class Book {
-//     constructor() {
-//     }
-//
-//     getTypeBook() {
-//         return new Promise((resolve, reject) => {
-//             let sql = `select *
-//                        from TheLoai`
-//             connectionMysql.query(sql, (err, result) => {
-//                 if (err) {
-//                     reject(err)
-//                 } else {
-//                     resolve(result)
-//                 }
-//             })
-//         })
-//     }
-//
-//     insertBook(TenSach, Mota, Theloai) {
-//         return new Promise((resolve, reject) => {
-//             let sql = `insert into Sach(Tensach, Mota, TheLoai_id)
-//                        values ('${TenSach}', '${Mota}', '${Theloai}')`
-//             connectionMysql.query(sql, (err, result) => {
-//                 if (err) {
-//                     reject(err)
-//                 }
-//                 resolve('Done')
-//             })
-//         })
-//     }
-//
-//     deleteBook(index) {
-//         return new Promise((resolve, reject) => {
-//             let sql = `delete
-//                        from Sach
-//                        where id = ${index}`
-//             connectionMysql.query(sql, (err, result) => {
-//                 if (err) {
-//                     reject(err)
-//                 }
-//                 resolve('Delete Done')
-//             })
-//         })
-//     }
-//
-//     updateBook(TenSach, Mota, Theloai, index) {
-//         return new Promise((resolve, reject) => {
-//             let sql = `update Sach
-//                        set TenSach='${TenSach}',
-//                            MoTa='${Mota}',
-//                            TheLoai_id='${Theloai}'
-//                        where id = '${index}'`
-//             connectionMysql.query(sql, (err, result) => {
-//                 if (err) {
-//                     reject(err)
-//                 }
-//                 resolve('Update Done')
-//
-//             })
-//         })
-//     }
-//
-//     findBookUpdateById(idUpdate) {
-//         return new Promise((resolve, reject) => {
-//             let sql = `select s.TenSach, s.MoTa, t.TheLoai
-//                        from Sach s
-//                                 join TheLoai t on s.TheLoai_id = t.TheLoai
-//                        where s.id = '${idUpdate}'`
-//             connectionMysql.query(sql, (err, result) => {
-//                 if (err) {
-//                     reject(err)
-//                 }
-//                 resolve(result)
-//
-//             })
-//
-//         })
-//     }
-// }

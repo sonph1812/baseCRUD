@@ -16,13 +16,13 @@ class BookController {
         req.on('end', () => {
             let book = qs.parse(data);
             this.book.insertBook(book);
-            res.writeHead(301, {location: '/book'})
+            res.writeHead(301, {location: '/admin/bookmanagement'})
             return res.end()
         });
     }
 
     showBookList(req, res) {
-        fs.readFile('views/bookmanagement/add.html', 'utf-8', async (err, data) => {
+        fs.readFile('views/bookmanagement/list.html', 'utf-8', async (err, data) => {
             if (err) {
                 console.log('File not Found');
             } else {
@@ -49,8 +49,8 @@ class BookController {
                                             <td>${books[index].Kho_id}</td>
                                             
                                             <td>
-                                                <a href="javascript:void(0);" class="action-icon btn btn-primary text-white">Edit</a>
-                                                <a href="javascript:void(0);" class="action-icon  btn btn-danger  text-white">Delete</a>
+                                                <a href="/admin/bookmanagement/edit?=${books[index].id}" class="action-icon btn btn-primary text-white">Edit</a>
+                                                <a href="/admin/bookmanagement/delete?=${books[index].id}" class="action-icon  btn btn-danger  text-white">Delete</a>
                                             </td>
                                         </tr>`
                     data = data.replace('{listbook}', tbody);
@@ -74,7 +74,7 @@ class BookController {
             let book = qs.parse(data);
             this.book.updateBook(id, book);
             res.writeHead(301, {
-                location: "/book",
+                location: "/admin/bookmanagement/edit",
             });
             return res.end();
         })
@@ -97,10 +97,26 @@ class BookController {
             }
         });
     }
-
-    showUpdateForm(req, res, idUpdate) {
-        fs.readFile("views/book")
+    deleteBook(req, res, id) {
+        this.book.deleteBook(id).then(() => {
+            res.writeHead(301, {
+                location: "/admin/bookmanagement",
+            });
+            return res.end();
+        });
     }
+    showBookFormCreate(req, res) {
+        fs.readFile("views/bookmanagement/create.html", "utf-8", (err, data) => {
+            if (err) {
+                console.log("File NotFound!");
+            } else {
+                res.writeHead(200, { "Content-Type": "text/html" });
+                res.write(data);
+                return res.end();
+            }
+        });
+    }
+
 }
 
 module.exports = BookController;

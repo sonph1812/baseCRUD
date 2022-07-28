@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e2feb26-7acb-4327-b423-3af61d3bedf9" name="Changes" comment="" />
+    <list default="true" id="7e2feb26-7acb-4327-b423-3af61d3bedf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/model/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/adminTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adminTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/bookcontroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/bookcontroller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/bookcontroller_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bookmanagement/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bookmanagement/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bookmanagement/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bookmanagement/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bookmanagement/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bookmanagement/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/bookmanagement/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +28,17 @@
         <option value="package.json" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sonpham" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/mysql/lib/Connection.js" root0="FORCE_HIGHLIGHTING" />
@@ -23,6 +47,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CRSrOT5QkmQvygxNvwQ8jFnFKY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,6 +64,7 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/sonph/WebstormProject/adminTest/assets/image&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -82,11 +108,25 @@
       <workItem from="1658848155609" duration="13686000" />
       <workItem from="1658890504099" duration="13874000" />
       <workItem from="1658911709332" duration="3686000" />
-      <workItem from="1658931854149" duration="670000" />
+      <workItem from="1658931854149" duration="950000" />
+      <workItem from="1658932816878" duration="237000" />
+      <workItem from="1658971232967" duration="12456000" />
+      <workItem from="1658989749638" duration="494000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
